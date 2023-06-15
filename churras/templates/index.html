@@ -1,7 +1,35 @@
 {% extends 'base.html' %}
-{% block conteudo%} 
-    <h2>Este bloco faz parte do meu app Churras...</h2>
-    <p>conteúdo do bloco...</p>
+{% load static %}
+
+{%block titulo%} Churras {% endblock %}
+
+
+{% block conteudo %}
+
+
+<!-- Aprenbdendo for no Django e aplicando no HTML -->
+<!-- {{ lista_pratos }}
+{% for prato in lista_pratos.values %}
+    {{ prato }}<br>
+{% endfor %} -->
+
+<div class="container">
+    <div class="row">
+        <!-- Single Best Receipe Area -->
+        {% for prato in lista_pratos.values %}
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-best-receipe-area mb-30">
+                <img src="{% static 'img/bg-img/foto_receita.png'%}" alt="">
+                <div class="receipe-content">
+                    <a href="receita.html">
+                        <h5>{{prato}}</h5>
+                    </a>
+                </div>
+            </div>
+        </div> 
+        {% endfor %}                   
+    </div>
+</div>
 
 
 {% endblock %}
