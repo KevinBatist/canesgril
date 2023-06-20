@@ -4,7 +4,7 @@ from .models import Prato
 # Create your views here.
 
 def index(request):
-    pratos = Prato.objects.all()
+    pratos = Prato.objects.filter(publicado = True).order_by('-data_prato')
     contexto = {'lista_pratos' : pratos,}
     return render(request, 'index.html', contexto)
     # return HttpResponse('<h1>Churrasco - Canes Gril</h1><p>Toma o primeiro site<p>')

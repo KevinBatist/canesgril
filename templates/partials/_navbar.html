@@ -7,7 +7,7 @@
             <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                 <!-- Logo -->
-                <a class="nav-brand" href="http://127.0.0.1:8000/"><img src="{% static 'img/core-img/logo.png'%}" alt=""></a>
+                <a class="nav-brand" href="{%url 'index'%}"><img src="{% static 'img/core-img/logo.png'%}" alt=""></a>
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
@@ -25,8 +25,8 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="http://127.0.0.1:8000/">Home</a></li>
-                            <li><a href="churrasco.html">Churrasco</a></li>
+                            <li><a href="{%url 'index'%}">Home</a></li>
+                            <li><a href="{churrasco.html}">Churrasco</a></li>
                         </ul>
 
                         <!-- Formulario de busca -->

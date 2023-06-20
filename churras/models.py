@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from pessoas.models import Pessoa
 # Create your models here.
 
 #Esta classe de models se tornará uma tabela no banco de dados
@@ -19,6 +20,12 @@ class Prato(models.Model):
     categoria = models.CharField(max_length=100, verbose_name='Categoria')
 
     data_prato = models.DateTimeField(default=datetime.now, blank=True)
+
+    pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
+
+    publicado = models.BooleanField(default=False)
+
+    foto_prato = models.ImageField(upload_to='pratos/%Y/%m', blank=True)
 
     def __str__(self):
         return self.nome_prato

@@ -9,5 +9,5 @@ INSERT INTO churras_prato(
         (2,'Cupim', 'Carvão em brasa, Cupim e Sal Grosso', 'Uma referência especial dos paulistas. Bastante gordurosa e macia, o cupim e uma carne fibrosa, que se desfia quando bem preparada ', 40,2,'Churrasco','2022-01-30 21:05:50-03'),
         (1,'Alcatra','Carvão em brasa, Alcatra e Sal Grosso','Carne com muitas fibras, porém macia. Sua lateral apresenta uma boa parcela de gordura. Equilibrando de forma harmônica maciez e fibras.', 40,2,'Churrasco','2022-01-30 21:05:50-03'),
         (2,'Maminha','Carvão em brasa, Maminha e Sal Grosso','Vem da parte inferior da Alcatra. E uma carne com fibras, porém macia e saborosa.', 40,2,'Churrasco','2022-01-30 21:05:50-03'),
-        (2,'Abacaxiiiiiiii','Carvão em brasa, Abacaxi e Canela','Abacaxi assado com canela ao creme de leite condensado ', 40,2,'Sobremesa','2022-01-30 21:05:50-03')
+        (2,'Abacaxi','Carvão em brasa, Abacaxi e Canela','Abacaxi assado com canela ao creme de leite condensado ', 40,2,'Sobremesa','2022-01-30 21:05:50-03')
 ;

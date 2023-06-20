@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'pessoas',
     'churras',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,10 +127,12 @@ USE_TZ = True
 
 STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'templates/static',
-    
-]
+STATICFILES_DIRS = [BASE_DIR / 'templates/static',]
+
+#Media
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = 'media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
