@@ -1,9 +1,45 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{%block titulo%} Cadastro {% endblock %}
+{%block titulo%} Dashboard {% endblock %}
+
 
 {% block conteudo %}
 
-<h1>DASHBOARD BOLADO</h1>
+
+<!-- Aprenbdendo for no Django e aplicando no HTML -->
+<!-- {{ lista_pratos }} -->
+<div class="container">
+    <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h3>Olá, {{ user.username }} !</h3>
+                </div>
+            </div>
+        <!-- Single Best Receipe Area -->
+        {% for prato in lista_pratos %}
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="single-best-receipe-area mb-30">
+                {% if prato.foto_prato %}
+                    <img src="{{ prato.foto_prato.url }}" alt="">
+                {%else%}
+                    <img src="{% static 'img/bg-img/foto_receita.png'%}" alt="">
+                {%endif%}
+                <div class="receipe-content">
+                    <a href="{% url 'churrasco' prato.id %}">
+                        <h5>{{prato.nome_prato}}</h5>
+                        <p>{{prato.categoria}}</p>
+                    </a>
+                </div>
+            </div>
+        </div> 
+        {% empty %}
+        <div class="col-12"></div>
+            <h1>Não existem pratos listados</h1>
+        </div>
+        {% endfor %}                   
+    </div>
+</div>
+
 
 {% endblock %}

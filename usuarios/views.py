@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from churras.models import Prato
 
 def cadastro(request):
     if request.method == "POST":
@@ -45,14 +46,13 @@ def login(request):
 
     return render(request, 'login.html')
 
-
-
-
-
-
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    pratos = Prato.objects.filter(publicado = True).order_by('-data_prato')
+    contexto = {'lista_pratos' : pratos,}
 
+    if request.user.is_authenticated:
+        return render(request, 'dashboard.html', contexto)
+    return redirect('index')
 
 
 
@@ -60,3 +60,16 @@ def dashboard(request):
 def logout(request):
     auth.logout(request)
     return redirect('index')
+
+def criar_prato(request):
+    if request.method == "POST":
+        nome_prato = request.POST['nome_prato']
+        ingredientes = request.POST['ingredientes']
+        modo_preparo = request.POST['modo_preparo']
+        tempo_preparo = request.POST['tempo_preparo']
+        rendimento = request.POST['rendimento']
+        categoria = request.POST['categoria']
+        foto_prato = request.POST['foto_prato']
+
+
+    return render(request, 'criar_prato.html')
