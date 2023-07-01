@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from pessoas.models import Pessoa
+from django.contrib.auth.models import User
 # Create your models here.
 
 #Esta classe de models se tornará uma tabela no banco de dados
@@ -21,7 +21,7 @@ class Prato(models.Model):
 
     data_prato = models.DateTimeField(default=datetime.now, blank=True)
 
-    pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
+    pessoa = models.ForeignKey(User, on_delete=models.CASCADE)
 
     publicado = models.BooleanField(default=False)
 
